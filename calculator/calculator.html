@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script type="text/javascript" src="calculator.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form name="form">
+                <div class="input">
+                    <p id="operation"></p>
+                    <input type="text" name="display">
+                </div>
+                <div class="button">
+                    <div class="first row">
+                        <input type="button" value="sin" onclick="appendToDisplay('sin(')">
+                        <input type="button" value="cos" onclick="appendToDisplay('cos(')">
+                        <input type="button" value="tan" onclick="appendToDisplay('tan(')">
+                        <input type="button" value="mod" onclick="appendToDisplay('mod')">
+                        <input type="button" value="π" onclick="display.value += '3.14'">
+                        <input type="button" value="(" onclick="display.value += '('">
+                        <input type="button" value="." onclick="display.value += '.'">
+                        <input type="button" value=")" onclick="display.value += ')'">
+                        <input type="button" value="⌫" onclick="display.value = display.value.slice(0, -1)">
+                    </div>
+                    <div class="second row">
+                        <input type="button" value="sec" onclick="appendToDisplay('sec(')">
+                        <input type="button" value="cot" onclick="appendToDisplay('cot(')">
+                        <input type="button" value="csc" onclick="display.value += '7'">
+                        <input type="button" value="X^Y" onclick="appendToDisplay('^')">
+                        <input type="button" value="7" onclick="display.value += '7'">
+                        <input type="button" value="8" onclick="display.value += '8'">
+                        <input type="button" value="9" onclick="display.value += '9'">
+                        <input type="button" value="÷" onclick="display.value += '/'">
+                        <input type="button" value="C" onclick="clearDisplay()">
+                    </div>
+                    <div class="Third row">
+                        <input type="button" value="sinh" onclick="appendToDisplay('sinh(')">
+                        <input type="button" value="cosh" onclick="appendToDisplay('cosh(')">
+                        <input type="button" value="tanh" onclick="appendToDisplay('tanh(')">
+                        <input type="button" value="x³" onclick="appendToDisplay('**3')">
+                        <input type="button" value="4" onclick="display.value += '4'">
+                        <input type="button" value="5" onclick="display.value += '5'">
+                        <input type="button" value="6" onclick="display.value += '6'">
+                        <input type="button" value="*" onclick="display.value += '*'">
+                        <input type="button" value="const" onclick="display.value += 'const'" >
+                    </div>
+                    <div class="fourth row">
+                        <input type="button" value="asin" onclick="appendToDisplay('asin(')">
+                        <input type="button" value="acos" onclick="appendToDisplay('acos(')">
+                        <input type="button" value="atan" onclick="appendToDisplay('atan(')">
+                        <input type="button" value="x²" onclick="appendToDisplay('**2')"">
+                        <input type="button" value="1" onclick="display.value += '1'">
+                        <input type="button" value="2" onclick="display.value += '2'">
+                        <input type="button" value="3" onclick="display.value += '3'">
+                        <input type="button" value="-" onclick="display.value += '-'">
+                        <input type="button" value="+" onclick="display.value += '+'">
+                    </div>
+                    <div class="fifth row">
+                        <input type="button" value="asec" onclick="appendToDisplay('asec(')">
+                        <input type="button" value="acot" onclick="appendToDisplay('acot(')">
+                        <input type="button" value="acsc" onclick="appendToDisplay('acsc(')">
+                        <input type="button" value="√x" onclick="appendToDisplay('sqrt(')">
+
+                        <input type="button" value="log" onclick="display.value += 'log('">
+                        <input type="button" value="ln" onclick="display.value += 'ln('">
+                        <input type="button" value="ex" onclick="display.value += 'exp('">
+                        <input type="button" value="lg2" onclick="display.value += 'log2('">
+                        <input type="button" value="0" onclick="display.value += '0'">
+                    </div>
+                    <div class="sixth row">
+                        <input type="button" value="asinh" onclick="appendToDisplay('asinh(')">
+                        <input type="button" value="acosh" onclick="appendToDisplay('acosh(')">
+                        <input type="button" value="atanh" onclick="appendToDisplay('atanh(')">
+                        <input type="button" value="∛x" onclick="appendToDisplay('cbrt(')">
+                        <input type="button" value="nCr" onclick="appendToDisplay('C')">
+                        <input type="button" value="00" onclick= "display.value += '00'">
+                        <input type="button" value="%" onclick="display.value += '%'">
+                        <input type="button" value="npr" onclick="display.value += 'P'">
+                        <input type="button" value="n!" onclick="appendToDisplay('!')">
+                    </div>
+                    <div class="eighth-row">
+                        <input type="button" value="=" id="equals" onclick="evaluateExpression()">
+                        <input type="button" value="," onclick="display.value += ','">
+                    </div>
+                    <div class="seventh-row">
+                        <div class="radio-buttons">
+                            <input type="radio" id="deg" name="type" value="Deg">
+                            <label for="deg">Deg 360°</label>
+                            <input type="radio" id="rad" name="type" value="Rad">
+                            <label for="rad">Rad 2π</label>
+                        </div>
+                        <div id="clipboard">
+                            <input type="text" id="lastOperation" readonly>
+                            <button onclick="toggleDropdown(event)">▼</button>
+                            <div id="history" style="display: none;"></div>
+                        </div>
+                        <div class="icons">
+                            <input type = "button" value = "↑" onclick="showPreviousOperation(event, true)">
+                            <input type = "button" value = "↓" onclick="showPreviousOperation(event, false)">
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+

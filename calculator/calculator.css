@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width:100%;
+    height: 100vh;
+    background :lavenderblush;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calculator{
+    background: #D6EAF8;
+    padding: 20px;
+    border-radius: 10px;  
+}
+.calculator form input{
+    border: 1px solid #ADD8E6;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 22px;
+    color: black;
+    margin: 10px;
+    font-weight: 600;
+    /*background: linear-gradient(to right,  #ADD8E6, #87CEFA);*/
+}
+.calculator form input:hover{
+    background-color: lavenderblush;
+}
+
+.calculator form input:active{
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+form .input{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+form .input input{
+    text-align: right;
+    flex:2;
+    font-size: 50px;
+    box-shadow: none;
+}
+
+
+
+.seventh-row, .eighth-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.radio-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#clipboard {
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+#equals {
+    width: 100%;
+    height: 50px;
+}
+.radio-buttons input[type='radio'] {
+    width: 10px;
+    height: 10px;
+}
+.radio-buttons label {
+    display: block;
+}
+.radio-buttons span {
+    display: block;
+    margin-left: 20px;
+}
+
+#clipboard input {
+    width :300px;
+}
+
+input[value='sin'], input[value='cos'], input[value='tan'],
+input[value='sec'], input[value='csc'], input[value='cot'],
+input[value='sinh'], input[value='cosh'], input[value='tanh'],
+input[value='asin'], input[value='acos'], input[value='atan'],
+input[value='asec'], input[value='acot'], input[value='acsc'],
+input[value='asinh'], input[value='acosh'], input[value='atanh'] {
+    background-color: #ADD8E6;
+    font-weight: 400;
+}
+input[value='1'], input[value='2'], input[value='3'],
+input[value='4'], input[value='5'], input[value='6'],
+input[value='7'], input[value='8'], input[value='9']{
+    background-color: lightcyan;
+
+}
+/*
+@media only screen and (max-width: 600px) {
+    .calculator{
+        width: 80%; 
+        height: auto; 
+    }
+}*/
+@media (max-width: 600px) {
+    .calculator {
+        width: 100%;
+        padding: 10px; 
+    }
+}
+
+@keyframes click {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+.calculator form input:active{
+    animation: click 0.2s;
+}
